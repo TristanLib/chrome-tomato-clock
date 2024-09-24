@@ -1,0 +1,45 @@
+#pomodoro-float {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;  /* 从 50px 减小到 40px */
+  height: 40px; /* 从 50px 减小到 40px */
+  cursor: move;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 16px; /* 从 20px 减小到 16px */
+}
+
+#float-timer {
+  position: absolute;
+  bottom: 1px;  /* 从 2px 调整到 1px */
+  right: 1px;   /* 从 2px 调整到 1px */
+  font-size: 10px; /* 从 12px 减小到 10px */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 18px;  /* 从 18px 减小到 14px */
+  height: 18px; /* 从 18px 减小到 14px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pomodoro-float-info {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9998;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
