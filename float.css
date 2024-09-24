@@ -22,7 +22,9 @@
   bottom: 1px;  /* 从 2px 调整到 1px */
   right: 1px;   /* 从 2px 调整到 1px */
   font-size: 10px; /* 从 12px 减小到 10px */
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(233, 152, 152, 0.8);
+  color: #000; /* 设置文字颜色为黑色 */
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff; /* 添加白色文字阴影 */
   border-radius: 50%;
   width: 18px;  /* 从 18px 减小到 14px */
   height: 18px; /* 从 18px 减小到 14px */
@@ -36,8 +38,10 @@
   top: 80px;
   right: 20px;
   z-index: 9998;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #e2a7a7;
+  border: 1px solid #b0e28e;
+  color: #000; /* 设置文字颜色为黑色 */
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff; /* 添加白色文字阴影 */
   border-radius: 5px;
   padding: 10px;
   display: none;
