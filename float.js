@@ -158,6 +158,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (document.getElementById('pomodoro-float-info').style.display !== 'none') {
       updateInfoContent();
     }
+  } else if (request.action === "showAlert") {
+    alert(request.message);
   }
   return true;
 });

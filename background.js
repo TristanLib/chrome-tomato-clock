@@ -30,17 +30,30 @@ function startTimer(duration) {
       } else {
         clearInterval(timer);
         isRunning = false;
+        // 使用 alert 提醒用户
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          chrome.tabs.sendMessage(tabs[0].id, {action: "showAlert", message: "番茄钟时间到！休息一下吧。"});
+        });
+        // 创建通知
         chrome.notifications.create({
           type: "basic",
           iconUrl: "icon.png",
           title: "番茄钟",
-          message: "时间到！"
+          message: "时间到！休息一下吧。",
+          buttons: [{ title: "再来一轮" }]
         });
         updateBadge();
       }
     }, 1000);
   }
 }
+
+// Add a listener for notification button clicks
+chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) => {
+  if (buttonIndex === 0) {  // "再来一轮" button
+    startTimer(25);  // Start a new 25-minute timer
+  }
+});
 
 function pauseTimer() {
   clearInterval(timer);

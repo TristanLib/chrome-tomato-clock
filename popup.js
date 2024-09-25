@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const resetBtn = document.getElementById('resetBtn');
   const durationSelect = document.getElementById('durationSelect');
   const floatToggle = document.getElementById('floatToggle');
+  const statusDisplay = document.getElementById('status');
 
   function updateTimerDisplay(timeLeft) {
     const minutes = Math.floor(timeLeft / 60);
@@ -16,9 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (response.isRunning) {
         updateTimerDisplay(response.timeLeft);
         startBtn.textContent = "暂停";
+        statusDisplay.textContent = "专注中...";
       } else {
         updateTimerDisplay(durationSelect.value * 60);
         startBtn.textContent = "开始";
+        statusDisplay.textContent = response.timeLeft === 0 ? "时间到！" : "";
       }
     });
   }
